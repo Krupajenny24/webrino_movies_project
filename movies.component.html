@@ -1,0 +1,80 @@
+<p>movies works!</p>
+
+
+<div>
+    <div>
+        <table class="table">
+            <thead>
+           <tr>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">ticket_price</th>
+            <th scope="col">image</th>
+            <th scope="col">year_of_release</th>
+            <th scope="col">createdby</th>
+            <th scope="col">updatedby</th>             
+           </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>3 idoits</td>
+                <td>300</td>
+                <td>2008</td>
+                <td>teamA</td>
+                <td>teamA</td>
+            </tr>
+           <tr *ngFor="let movie of movies">
+               <td scope="row">{{Movies.id}}</td>
+                <td>{{Movies.name}}</td>
+                <td>{{movie.image}}</td>
+                <td>{{movie.ticket_price}}</td>
+                <td>{{movie.year_of_release}}</td>
+                <td>{{movie.createdBy}}</td>
+                <td>{{movie.updatedBy}}</td>
+                
+           </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="form-floating mb-3">
+    <form action="" method="get">
+        <label>Movie name</label>
+        <input id="name" aria-placeholder="name" type="text" required=""><br>
+        <label>Ticket_Price</label>
+        <input id="ticket_price" aria-placeholder="ticket_price" type="text" required=""><br>
+        <label>Image</label>
+        <input id="image" url="" width="10px" height="10px" required=""><br>
+        <label>Year Of Release</label>
+        <input id="year_of_release" aria-placeholder="year_of_release" type="text" required=""><br>
+        <label>Created By</label>
+        <input id="createdBy" aria-placeholder="createdBy" type="text" required=""><br>
+        
+        <button type="submit" value="add" onclick="add()" >Add</button>
+        <button type="cancel"  onclick="reset()">Cancel</button>
+    </form>
+</div>
+
+<div class="form-floating mb-3">
+    <form action="" method="get">
+        <label>Update Movies</label>
+        <input id="update" value="update" type="text" required="">
+        <script>
+            document.getElementById("update").innerHTML =
+            obj.movies[1].name;
+            </script>
+        <button type="reset" plaseholder="update movies" onclick="update()">Reset</button>
+        <button type="cancel" onclick="reset()">Cancel</button>
+    </form>
+</div>
+
+<div class="form-floating mb-3">
+    <form action="" method="get">
+        <label>Delete Movies</label>
+        <input type="id" >
+        <button type="submit" placeholder="deleteing movie" onclick="deletes()">Delete</button>
+        <button type="cancel" onclick="reset">Cancel</button>
+    </form>
+</div>
